@@ -27,3 +27,4 @@ C:\Users\cadoniz\source\repos\InfijoToPostfijo\InfijoToPostfijo\obj\Debug\net8.0
 C:\Users\cadoniz\source\repos\InfijoToPostfijo\InfijoToPostfijo\obj\Debug\net8.0\InfijoToPostfijo.pdb
 C:\Users\cadoniz\source\repos\InfijoToPostfijo\InfijoToPostfijo\obj\Debug\net8.0\InfijoToPostfijo.genruntimeconfig.cache
 C:\Users\cadoniz\source\repos\InfijoToPostfijo\InfijoToPostfijo\obj\Debug\net8.0\ref\InfijoToPostfijo.dll
+C:\Users\cadoniz\source\repos\InfijoToPostfijo\InfijoToPostfijo\obj\Debug\net8.0\InfijoToPostfijo.sourcelink.json

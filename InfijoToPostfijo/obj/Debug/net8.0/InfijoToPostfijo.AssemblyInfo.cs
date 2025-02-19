@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InfijoToPostfijo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a46eb140e7e710ab79b895cbb9f5c2543ac245a")]
 [assembly: System.Reflection.AssemblyProductAttribute("InfijoToPostfijo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InfijoToPostfijo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

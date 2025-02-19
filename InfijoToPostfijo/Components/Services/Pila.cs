@@ -8,19 +8,19 @@ namespace InfijoToPostfijo.Components.Services
         private int longitud { get; set; }
         private int tope { get; set; }
 
-        public Pila(string notacion)
+        public Pila(int longitud)
         {
-            this.longitud = notacion.Length;
+            this.longitud = longitud;
             this.pila = new char[this.longitud];
             this.tope = 0;
         }
 
-        private bool isFull()
+        public bool isFull()
         {
             return this.longitud == this.tope;
         }
 
-        private bool isEmpty()
+        public bool isEmpty()
         {
             return this.tope == 0;
         }
@@ -50,6 +50,11 @@ namespace InfijoToPostfijo.Components.Services
             }
 
             return element;
+        }
+
+        public char getTope()
+        {
+            return this.pila[tope - 1];
         }
     }
 }
