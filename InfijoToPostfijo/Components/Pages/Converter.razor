@@ -1,0 +1,35 @@
+﻿@page "/"
+@using System
+@using InfijoToPostfijo.Components.Services
+
+@rendermode InteractiveServer
+
+<h3 class="text-center">Conversión a Notación Postfija</h3>
+<form class="row mt-5">
+        <div class="col-5">
+            <div class="form-group">
+                <label>Expresion Infija</label>
+                <InputText class="form-control" @bind-Value="expresion" placeholder="Ingrese una expresión" />
+            </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-items-center">
+            <button class="btn btn-primary" type="button">Convertir</button>
+        </div>
+        <div class="col-5">
+             <div class="form-group">
+                <label>Expresion Posfija</label>
+                <InputText class="form-control" @bind-Value="covertido" placeholder="" disabled/>
+              </div>
+        </div>
+    </form>
+
+
+@code {
+    private string expresion = "";
+    private string covertido = "";// Inicializar la variable
+
+    private void Convertir()
+    {
+        // Aquí iría la lógica de conversión si la necesitas más tarde.
+    }
+}
