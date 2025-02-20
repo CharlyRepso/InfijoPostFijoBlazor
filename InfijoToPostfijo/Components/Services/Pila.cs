@@ -4,14 +4,14 @@ namespace InfijoToPostfijo.Components.Services
 {
     public class Pila
     {
-        private char[] pila { get; set; }
+        private string[] pila { get; set; }
         private int longitud { get; set; }
         private int tope { get; set; }
 
         public Pila(int longitud)
         {
             this.longitud = longitud;
-            this.pila = new char[this.longitud];
+            this.pila = new string[this.longitud];
             this.tope = 0;
         }
 
@@ -25,7 +25,7 @@ namespace InfijoToPostfijo.Components.Services
             return this.tope == 0;
         }
 
-        public bool push(char elemento)
+        public bool push(string elemento)
         {
             if (!this.isFull()) { 
                 this.pila[tope] = elemento;
@@ -39,20 +39,20 @@ namespace InfijoToPostfijo.Components.Services
 
         }
 
-        public char pop()
+        public string pop()
         {
-            char element = ' ';
+            string element = "";
             if (!this.isEmpty())
             {
-                element = pila[tope];
-                pila[tope] = ' ';
                 tope--;
+                element = pila[tope];
+                pila[tope] = "";
             }
 
             return element;
         }
 
-        public char getTope()
+        public string getTope()
         {
             return this.pila[tope - 1];
         }

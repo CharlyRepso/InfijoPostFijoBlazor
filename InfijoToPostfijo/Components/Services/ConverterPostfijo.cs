@@ -2,31 +2,51 @@
 {
     public class ConverterPostfijo
     {
-        private Dictionary<char, int> precedencia = new Dictionary<char, int>
+        private int precedencia(string c)
         {
-            { '+', 1 }, { '-', 1 }, { '*', 2 }, { '/', 2 }, { '^', 3 }
-        };
+            int nivel = 0;
+
+            switch (c)
+            {
+                case "+":
+                case "-":
+                    nivel = 1;
+                    break;
+                case "*":
+                case "/":
+                    nivel = 2;
+                    break;
+                case "^":
+                    nivel = 3;
+                    break;
+            }
+            return nivel;
+        }
 
         public string Convertir(string expresionInfija)
         {
 
-            Pila pila = new Pila (expresionInfija.Length);
+            Pila pila = new Pila(expresionInfija.Length);
 
-            String salida = "";
+            string salida = "";
+            string numero = "";
 
-            foreach (char c in expresionInfija)
+
+            for (int i = 0; i < expresionInfija.Length; i++)
             {
+                char c = expresionInfija[i];
+
                 if (char.IsLetterOrDigit(c))
                 {
-                    salida += c;
+                    numero += c;
                 }
                 else if (c == '(')
                 {
-                    pila.push(c);
+                    pila.push(c.ToString());
                 }
                 else if (c == ')')
                 {
-                    while (!pila.isEmpty() && pila.getTope() != '(')
+                    while (!pila.isEmpty() && pila.getTope() != "(")
                     {
                         salida += pila.pop();
                     }
@@ -34,17 +54,32 @@
                 }
                 else
                 {
-                    while (!pila.isEmpty() && precedencia.ContainsKey(pila.getTope()) && precedencia[pila.getTope()] >= precedencia[c])
+                    while (!pila.isEmpty() && precedencia(c.ToString()) != 0 && precedencia(pila.getTope()) >= precedencia(c.ToString()))
                     {
                         salida += pila.pop();
                     }
-                    pila.push(c);
+                    pila.push(c.ToString());
+                }
+
+                if (i < expresionInfija.Length)
+                {
+                    if (numero != "")
+                    {
+                        
+                    }
+                    salida += numero + " ";
+                    numero = "";
                 }
             }
 
+            
+
+
+
+
             while (!pila.isEmpty())
             {
-                salida+= pila.pop();
+                salida += pila.pop();
             }
 
             return salida;
