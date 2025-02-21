@@ -1,4 +1,6 @@
-﻿namespace InfijoToPostfijo.Components.Services
+﻿using System.Numerics;
+
+namespace InfijoToPostfijo.Components.Services
 {
     public class ConverterPostfijo
     {
@@ -83,19 +85,67 @@
             return salida;
         }
 
-        public int Operar(string expresionPostfija)
+        public string Operar(string expresionPostfija)
         {
-            int resultado = 0;
+            string resultado;
             string[] elementos = expresionPostfija.Split(' ');
+            Pila pila = new Pila(expresionPostfija.Length);
+            double a = 0;
+            double b = 0;
 
-            for (int i = 0; i < elementos.Length; i++)
+            for (int i = 0; i < elementos.Length-1; i++)
             {
-                
-
-
+                string element = elementos[i];
+                switch (element)
+                {
+                    case "+":
+                        a = double.Parse(pila.pop());
+                        b = double.Parse(pila.pop());
+                        
+                        pila.push(sumar(a, b).ToString());
+                        break;
+                    case "-":
+                        b = double.Parse(pila.pop());
+                        a = double.Parse(pila.pop());
+                        pila.push(restar(a, b).ToString());
+                        break;
+                    case "*":
+                        a = double.Parse(pila.pop());
+                        b = double.Parse(pila.pop());
+                        pila.push(multiplicar(a, b).ToString());
+                        break;
+                    case "/":
+                        b = double.Parse(pila.pop());
+                        a = double.Parse(pila.pop());
+                        pila.push(dividir(a, b).ToString());
+                        break;
+                    case "^":
+                        b = double.Parse(pila.pop());
+                        a = double.Parse(pila.pop());
+                        pila.push(Potencia(a, b).ToString());
+                        break;
+                    default:
+                        pila.push(element);
+                        break;
+                }
             }
+
+            resultado = pila.pop();
+            System.Diagnostics.Debug.WriteLine(resultado);
 
             return resultado;
         }
+
+
+        private double sumar(double a, double b) { return a + b; }
+
+        private double restar(double a, double b) { return a - b; }
+
+        private double multiplicar (double a, double b) {return a * b; }
+
+        private double dividir (double a, double b) { return a / b; }
+
+        private double Potencia(double a, double b) { return Math.Pow(a,b); }
+
     }
 }
