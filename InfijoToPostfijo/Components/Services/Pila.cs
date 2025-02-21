@@ -54,7 +54,12 @@ namespace InfijoToPostfijo.Components.Services
 
         public string getTope()
         {
-            return this.pila[tope - 1];
+            string val_top = " ";
+            if (tope > 0)
+            {
+                val_top = this.pila[tope - 1];
+            }
+            return val_top;
         }
     }
 }

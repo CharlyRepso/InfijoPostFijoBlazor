@@ -12,20 +12,24 @@
             <InputText class="form-control" @bind-Value="expresion" placeholder="Ingrese una expresión" />
         </div>
     </div>
-    <div class="col-2 d-flex justify-content-center align-items-center" style="gap: 15px;">
+    <div class="col-2 d-flex justify-content-center align-items-end" style="gap: 15px;">
         <button class="btn btn-primary" type="button" @onclick="Convertir">Convertir</button>
-        <button class="btn btn-secondary" type="button">Operar</button>
     </div>
     <div class="col-5">
         <div class="form-group">
-        <label>Expresion Posfija</label>
-        <InputText class="form-control" @bind-Value="covertido" placeholder="" disabled/>
+            <label>Expresion Posfija</label>
+            <InputText class="form-control" @bind-Value="covertido" placeholder="" disabled/>
         </div>
     </div>
-    <div class="col-6 mt-4">
-        <div class="form-group">
-            <label>Resultado Operado</label>
-            <InputText class="form-control" @bind-Value="operacion" placeholder="" disabled />
+    <div class="row">
+        <div class="col-3 d-flex align-items-end justify-content-end">
+            <button class="btn btn-secondary" type="button" @onclick="Operar">Operar</button>
+        </div>
+        <div class="col-6 mt-4">
+            <div class="form-group">
+                <label>Resultado Operado</label>
+                <InputText class="form-control" @bind-Value="operacion" placeholder="" disabled />
+            </div>
         </div>
     </div>
 </form>
@@ -35,11 +39,15 @@
     private string expresion = "";
     private string covertido = "";
     private string operacion = "";
+    ConverterPostfijo convertidor = new ConverterPostfijo();
 
     private void Convertir()
     {
-        ConverterPostfijo convertidor = new ConverterPostfijo();
         covertido = convertidor.Convertir(expresion);
         //System.Diagnostics.Debug.WriteLine();
+    }
+
+    private void Operar(){
+       operacion = convertidor.Operar(covertido).ToString();
     }
 }

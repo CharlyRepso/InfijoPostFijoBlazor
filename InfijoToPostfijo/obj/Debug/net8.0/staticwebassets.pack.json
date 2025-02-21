@@ -1,24 +1,28 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\cadoniz\\source\\repos\\InfijoToPostfijo\\InfijoToPostfijo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InfijoToPostfijo.bundle.scp.css",
-      "PackagePath": "staticwebassets\\InfijoToPostfijo.bundle.scp.css"
+      "Id": "C:\\Users\\cdoni\\source\\repos\\InfijoPostFijoBlazor\\InfijoToPostfijo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InfijoToPostfijo.bundle.scp.css",
+      "PackagePath": "staticwebassets\\InfijoToPostfijo.dtudyw8jrd.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\cadoniz\\source\\repos\\InfijoToPostfijo\\InfijoToPostfijo\\wwwroot\\app.css",
+      "Id": "C:\\Users\\cdoni\\source\\repos\\InfijoPostFijoBlazor\\InfijoToPostfijo\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\cadoniz\\source\\repos\\InfijoToPostfijo\\InfijoToPostfijo\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\cdoni\\source\\repos\\InfijoPostFijoBlazor\\InfijoToPostfijo\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\cadoniz\\source\\repos\\InfijoToPostfijo\\InfijoToPostfijo\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\cdoni\\source\\repos\\InfijoPostFijoBlazor\\InfijoToPostfijo\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\cadoniz\\source\\repos\\InfijoToPostfijo\\InfijoToPostfijo\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\cdoni\\source\\repos\\InfijoPostFijoBlazor\\InfijoToPostfijo\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.InfijoToPostfijo.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.InfijoToPostfijo.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -34,11 +34,23 @@
 
             for (int i = 0; i < expresionInfija.Length; i++)
             {
+
                 char c = expresionInfija[i];
+
+                if (!char.IsLetterOrDigit(c) && c != '(')
+                {
+                    salida += numero + " ";
+                    numero = "";
+
+                }
 
                 if (char.IsLetterOrDigit(c))
                 {
                     numero += c;
+                    if (i == expresionInfija.Length - 1)
+                    {
+                        salida += numero+" ";
+                    }
                 }
                 else if (c == '(')
                 {
@@ -48,7 +60,7 @@
                 {
                     while (!pila.isEmpty() && pila.getTope() != "(")
                     {
-                        salida += pila.pop();
+                        salida += pila.pop()+" ";
                     }
                     pila.pop(); // Eliminar '('
                 }
@@ -56,33 +68,34 @@
                 {
                     while (!pila.isEmpty() && precedencia(c.ToString()) != 0 && precedencia(pila.getTope()) >= precedencia(c.ToString()))
                     {
-                        salida += pila.pop();
+                        salida += pila.pop()+" ";
                     }
                     pila.push(c.ToString());
                 }
-
-                if (i < expresionInfija.Length)
-                {
-                    if (numero != "")
-                    {
-                        
-                    }
-                    salida += numero + " ";
-                    numero = "";
-                }
             }
-
-            
-
-
 
 
             while (!pila.isEmpty())
             {
-                salida += pila.pop();
+                salida += pila.pop()+" ";
             }
 
             return salida;
+        }
+
+        public int Operar(string expresionPostfija)
+        {
+            int resultado = 0;
+            string[] elementos = expresionPostfija.Split(' ');
+
+            for (int i = 0; i < elementos.Length; i++)
+            {
+                
+
+
+            }
+
+            return resultado;
         }
     }
 }
